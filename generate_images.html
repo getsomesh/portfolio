@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+canvas { margin: 10px; border: 1px solid #ccc; }
+</style>
+</head>
+<body>
+
+<canvas id="canvas1" width="800" height="450"></canvas>
+<canvas id="canvas2" width="800" height="450"></canvas>
+<canvas id="canvas3" width="800" height="450"></canvas>
+
+<script>
+// ConnectiveRx Project
+const canvas1 = document.getElementById('canvas1');
+const ctx1 = canvas1.getContext('2d');
+const gradient1 = ctx1.createLinearGradient(0, 0, 800, 450);
+gradient1.addColorStop(0, '#1e293b');
+gradient1.addColorStop(1, '#2563eb');
+ctx1.fillStyle = gradient1;
+ctx1.fillRect(0, 0, 800, 450);
+ctx1.fillStyle = '#ffffff';
+ctx1.font = 'bold 48px Arial';
+ctx1.textAlign = 'center';
+ctx1.fillText('ConnectiveRx Platform', 400, 200);
+ctx1.font = '24px Arial';
+ctx1.fillText('Technical Leadership & Cloud Solutions', 400, 250);
+ctx1.fillStyle = 'rgba(255,255,255,0.3)';
+ctx1.fillRect(100, 300, 600, 4);
+ctx1.fillStyle = '#0ea5e9';
+ctx1.fillRect(100, 300, 240, 4);
+
+// Ashley OMS Project
+const canvas2 = document.getElementById('canvas2');
+const ctx2 = canvas2.getContext('2d');
+const gradient2 = ctx2.createLinearGradient(0, 0, 800, 450);
+gradient2.addColorStop(0, '#0f172a');
+gradient2.addColorStop(1, '#334155');
+ctx2.fillStyle = gradient2;
+ctx2.fillRect(0, 0, 800, 450);
+ctx2.fillStyle = '#ffffff';
+ctx2.font = 'bold 48px Arial';
+ctx2.textAlign = 'center';
+ctx2.fillText('Ashley OMS Modernization', 400, 200);
+ctx2.font = '24px Arial';
+ctx2.fillText('Product Strategy & System Architecture', 400, 250);
+ctx2.fillStyle = 'rgba(255,255,255,0.3)';
+ctx2.fillRect(100, 300, 600, 4);
+ctx2.fillStyle = '#3b82f6';
+ctx2.fillRect(100, 300, 150, 4);
+
+// Agilysys Project
+const canvas3 = document.getElementById('canvas3');
+const ctx3 = canvas3.getContext('2d');
+const gradient3 = ctx3.createLinearGradient(0, 0, 800, 450);
+gradient3.addColorStop(0, '#064e3b');
+gradient3.addColorStop(1, '#059669');
+ctx3.fillStyle = gradient3;
+ctx3.fillRect(0, 0, 800, 450);
+ctx3.fillStyle = '#ffffff';
+ctx3.font = 'bold 48px Arial';
+ctx3.textAlign = 'center';
+ctx3.fillText('Agilysys Loyalty System', 400, 200);
+ctx3.font = '24px Arial';
+ctx3.fillText('Product Development & Go-to-Market', 400, 250);
+ctx3.fillStyle = 'rgba(255,255,255,0.3)';
+ctx3.fillRect(100, 300, 600, 4);
+ctx3.fillStyle = '#10b981';
+ctx3.fillRect(100, 300, 360, 4);
+
+// Download function
+function downloadCanvas(canvas, filename) {
+    const link = document.createElement('a');
+    link.download = filename;
+    link.href = canvas.toDataURL();
+    link.click();
+}
+
+// Auto download after 1 second
+setTimeout(() => {
+    downloadCanvas(canvas1, 'project-1.png');
+    downloadCanvas(canvas2, 'project-2.png');
+    downloadCanvas(canvas3, 'project-3.png');
+}, 1000);
+</script>
+
+</body>
+</html>
