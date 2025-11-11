@@ -41,3 +41,32 @@ window.addEventListener("scroll", () => {
     alterStyles(isBackToTopRendered);
   }
 });
+
+/* -----------------------------------------
+  Resume Modal Functions
+ ---------------------------------------- */
+
+function openResumeModal() {
+  document.getElementById('resumeModal').style.display = 'block';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeResumeModal() {
+  document.getElementById('resumeModal').style.display = 'none';
+  document.body.style.overflow = 'auto';
+}
+
+// Close modal when clicking outside of it
+window.onclick = function(event) {
+  const modal = document.getElementById('resumeModal');
+  if (event.target === modal) {
+    closeResumeModal();
+  }
+}
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+    closeResumeModal();
+  }
+});
