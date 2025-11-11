@@ -560,32 +560,42 @@ body:not(.user-is-tabbing) a:focus {
 /* --------------------------------------- */
 
 .competencies__content {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     gap: 3rem;
     margin-top: 2rem;
 }
 
-@media(max-width: 1200px) {
-    .competencies__content {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media(max-width: 768px) {
-    .competencies__content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-}
-
 .competency__category {
+    flex: 1;
+    min-width: 280px;
+    max-width: calc(33.333% - 2rem);
     background: rgba(248,250,252, 0.02);
     padding: 2.5rem;
     border-radius: 12px;
     border: 1px solid rgba(100,116,139, 0.1);
     transition: all 0.3s ease;
 }
+
+@media(max-width: 1200px) {
+    .competency__category {
+        max-width: calc(50% - 1.5rem);
+    }
+}
+
+@media(max-width: 768px) {
+    .competencies__content {
+        gap: 2rem;
+    }
+    
+    .competency__category {
+        max-width: 100%;
+        min-width: 100%;
+    }
+}
+
+
 
 .competency__category:hover {
     transform: translateY(-3px);
@@ -732,6 +742,8 @@ body:not(.user-is-tabbing) a:focus {
     z-index: 1000;
     left: 0;
     top: 0;
+    width: 100%;
+    height: 100%;
     width: 100vw;
     height: 100vh;
     background-color: rgba(0,0,0,0.9);
@@ -739,13 +751,20 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .modal-content-full {
-    background: var(--black);
+    background: #0f1419;
     margin: 0;
     padding: 0;
+    width: 100%;
+    height: 100%;
     width: 100vw;
     height: 100vh;
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
 }
 
@@ -795,8 +814,13 @@ body:not(.user-is-tabbing) a:focus {
     width: 100%;
     height: 100%;
     border: none;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
     flex: 1;
     min-height: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 
