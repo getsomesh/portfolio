@@ -561,9 +561,22 @@ body:not(.user-is-tabbing) a:focus {
 
 .competencies__content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 3rem;
     margin-top: 2rem;
+}
+
+@media(max-width: 1200px) {
+    .competencies__content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 768px) {
+    .competencies__content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
 }
 
 .competency__category {
@@ -607,12 +620,7 @@ body:not(.user-is-tabbing) a:focus {
     color: var(--white);
 }
 
-@media(max-width: 900px) {
-    .competencies__content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-}
+
 
 /* --------------------------------------- */
 /* ----- Clients ----- */
@@ -724,18 +732,21 @@ body:not(.user-is-tabbing) a:focus {
     z-index: 1000;
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.8);
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.9);
+    overflow: hidden;
 }
 
 .modal-content-full {
     background: var(--black);
     margin: 0;
     padding: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .close {
@@ -784,6 +795,8 @@ body:not(.user-is-tabbing) a:focus {
     width: 100%;
     height: 100%;
     border: none;
+    flex: 1;
+    min-height: 0;
 }
 
 
