@@ -561,6 +561,12 @@ body:not(.user-is-tabbing) a:focus {
 
 .competencies__content {
     margin-top: 2rem;
+    font-size: 0;
+    text-align: left;
+}
+
+.competencies__content > * {
+    font-size: 1.8rem;
 }
 
 .competency__category {
