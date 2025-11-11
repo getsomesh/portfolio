@@ -282,8 +282,10 @@
   <!-- Resume Modal -->
   <div id="resumeModal" class="modal">
     <div class="modal-content-full">
-      <span class="close" onclick="closeResumeModal()">&times;</span>
-      <a href="./resume.pdf" class="download-btn" download="Somesh_Rajasekar_Resume.pdf">⬇</a>
+      <div style="margin-bottom: 10px;">
+        <a href="./resume.pdf" class="download-btn" download="Somesh_Rajasekar_Resume.pdf">Download PDF</a>
+        <span class="close" onclick="closeResumeModal()">&times;</span>
+      </div>
       <iframe src="./resume.pdf" class="resume-iframe-full" title="Resume PDF">
         <p>Your browser does not support PDFs. <a href="./resume.pdf" download="Somesh_Rajasekar_Resume.pdf">Download the PDF</a>.</p>
       </iframe>
