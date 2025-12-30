@@ -558,6 +558,59 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 /* --------------------------------------- */
+/* ----- Projects ----- */
+/* --------------------------------------- */
+
+.projects__boxes {
+    margin-top: 2rem;
+}
+
+.project__box {
+    background: rgba(248,250,252, 0.02);
+    border-radius: 12px;
+    padding: 3rem;
+    border: 1px solid rgba(100,116,139, 0.1);
+    transition: all 0.3s ease;
+    margin-bottom: 3rem;
+}
+
+.project__box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(37,99,235, 0.1);
+    border-color: rgba(37,99,235, 0.2);
+}
+
+.project__text h3 {
+    color: var(--white);
+    margin-bottom: 1.5rem;
+}
+
+.project__text p strong {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.project__list {
+    list-style: none;
+    margin: 1.5rem 0;
+}
+
+.project__list li {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--pink) 0%, var(--accent) 100%);
+    color: var(--white);
+    padding: 0.4rem 0.8rem;
+    margin: 0.2rem 0.2rem 0.2rem 0;
+    border-radius: 15px;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.project__links {
+    margin-top: 1.5rem;
+}
+
+/* --------------------------------------- */
 /* ----- Core Competencies ----- */
 /* --------------------------------------- */
 
